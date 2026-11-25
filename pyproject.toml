@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "embedfit"
+version = "0.1.0"
+description = "Analysis of spectra normalized by a reference quantity, with the instrument corrections embedded in the model (photoelectron yield spectroscopy and beyond)"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "BSD-3-Clause"}
+authors = [{name = "Shinjiro Yagyu"}]
+keywords = ["photoelectron yield spectroscopy", "forward model", "Poisson likelihood", "dead-time correction"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: BSD License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Physics",
+]
+dependencies = ["numpy>=1.21", "scipy>=1.7"]
+
+[project.urls]
+Repository = "https://github.com/s-yagyu/embedfit"
+
+[project.optional-dependencies]
+plot = ["matplotlib>=3.5"]
+test = ["pytest"]
+
+[tool.setuptools]
+packages = ["embedfit", "embedfit.readers"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
